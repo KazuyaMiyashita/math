@@ -1,10 +1,10 @@
 package math.matrix;
 
+import math.numbers.DoubleInstances;
 import org.junit.jupiter.api.Test;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -12,34 +12,34 @@ class PrimitiveDeterminantTest {
 
     @Test
     void generatePermutations() {
-        var result = PrimitiveDeterminant.generatePermutations(5);
+        var result = PrimitiveDeterminant.generatePermutations(5, DoubleInstances.field);
 
         var expected = List.of(
-                new PrimitiveDeterminant.Permutation(1,  new LinkedList<>(List.of(0, 1, 2, 3, 4))),
-                new PrimitiveDeterminant.Permutation(-1, new LinkedList<>(List.of(0, 1, 2, 4, 3))), // (3 4)
-                new PrimitiveDeterminant.Permutation(-1, new LinkedList<>(List.of(0, 1, 3, 2, 4))), // (2 3)
-                new PrimitiveDeterminant.Permutation(1,  new LinkedList<>(List.of(0, 1, 3, 4, 2))), // (2 3)(3 4)
-                new PrimitiveDeterminant.Permutation(1,  new LinkedList<>(List.of(0, 1, 4, 2, 3))), // (2 4)(3 4)
-                new PrimitiveDeterminant.Permutation(-1, new LinkedList<>(List.of(0, 1, 4, 3, 2))), // (2 4)
-                new PrimitiveDeterminant.Permutation(-1, new LinkedList<>(List.of(0, 2, 1, 3, 4))),
-                new PrimitiveDeterminant.Permutation(1,  new LinkedList<>(List.of(0, 2, 1, 4, 3))),
-                new PrimitiveDeterminant.Permutation(1,  new LinkedList<>(List.of(0, 2, 3, 1, 4))),
-                new PrimitiveDeterminant.Permutation(-1, new LinkedList<>(List.of(0, 2, 3, 4, 1))),
-                new PrimitiveDeterminant.Permutation(-1, new LinkedList<>(List.of(0, 2, 4, 1, 3))),
-                new PrimitiveDeterminant.Permutation(1,  new LinkedList<>(List.of(0, 2, 4, 3, 1))),
-                new PrimitiveDeterminant.Permutation(1,  new LinkedList<>(List.of(0, 3, 1, 2, 4))),
-                new PrimitiveDeterminant.Permutation(-1, new LinkedList<>(List.of(0, 3, 1, 4, 2))),
-                new PrimitiveDeterminant.Permutation(-1, new LinkedList<>(List.of(0, 3, 2, 1, 4))),
-                new PrimitiveDeterminant.Permutation(1,  new LinkedList<>(List.of(0, 3, 2, 4, 1))),
-                new PrimitiveDeterminant.Permutation(1,  new LinkedList<>(List.of(0, 3, 4, 1, 2))),
-                new PrimitiveDeterminant.Permutation(-1, new LinkedList<>(List.of(0, 3, 4, 2, 1))),
-                new PrimitiveDeterminant.Permutation(-1, new LinkedList<>(List.of(0, 4, 1, 2, 3))),
-                new PrimitiveDeterminant.Permutation(1,  new LinkedList<>(List.of(0, 4, 1, 3, 2))),
-                new PrimitiveDeterminant.Permutation(1,  new LinkedList<>(List.of(0, 4, 2, 1, 3))),
-                new PrimitiveDeterminant.Permutation(-1, new LinkedList<>(List.of(0, 4, 2, 3, 1))),
-                new PrimitiveDeterminant.Permutation(-1, new LinkedList<>(List.of(0, 4, 3, 1, 2))),
-                new PrimitiveDeterminant.Permutation(1,  new LinkedList<>(List.of(0, 4, 3, 2, 1))),
-                new PrimitiveDeterminant.Permutation(-1, new LinkedList<>(List.of(1, 0, 2, 3, 4)))
+                new PrimitiveDeterminant.Permutation<Double>(1.0,  new LinkedList<>(List.of(0, 1, 2, 3, 4))),
+                new PrimitiveDeterminant.Permutation<Double>(-1.0, new LinkedList<>(List.of(0, 1, 2, 4, 3))), // (3 4)
+                new PrimitiveDeterminant.Permutation<Double>(-1.0, new LinkedList<>(List.of(0, 1, 3, 2, 4))), // (2 3)
+                new PrimitiveDeterminant.Permutation<Double>(1.0,  new LinkedList<>(List.of(0, 1, 3, 4, 2))), // (2 3)(3 4)
+                new PrimitiveDeterminant.Permutation<Double>(1.0,  new LinkedList<>(List.of(0, 1, 4, 2, 3))), // (2 4)(3 4)
+                new PrimitiveDeterminant.Permutation<Double>(-1.0, new LinkedList<>(List.of(0, 1, 4, 3, 2))), // (2 4)
+                new PrimitiveDeterminant.Permutation<Double>(-1.0, new LinkedList<>(List.of(0, 2, 1, 3, 4))),
+                new PrimitiveDeterminant.Permutation<Double>(1.0,  new LinkedList<>(List.of(0, 2, 1, 4, 3))),
+                new PrimitiveDeterminant.Permutation<Double>(1.0,  new LinkedList<>(List.of(0, 2, 3, 1, 4))),
+                new PrimitiveDeterminant.Permutation<Double>(-1.0, new LinkedList<>(List.of(0, 2, 3, 4, 1))),
+                new PrimitiveDeterminant.Permutation<Double>(-1.0, new LinkedList<>(List.of(0, 2, 4, 1, 3))),
+                new PrimitiveDeterminant.Permutation<Double>(1.0,  new LinkedList<>(List.of(0, 2, 4, 3, 1))),
+                new PrimitiveDeterminant.Permutation<Double>(1.0,  new LinkedList<>(List.of(0, 3, 1, 2, 4))),
+                new PrimitiveDeterminant.Permutation<Double>(-1.0, new LinkedList<>(List.of(0, 3, 1, 4, 2))),
+                new PrimitiveDeterminant.Permutation<Double>(-1.0, new LinkedList<>(List.of(0, 3, 2, 1, 4))),
+                new PrimitiveDeterminant.Permutation<Double>(1.0,  new LinkedList<>(List.of(0, 3, 2, 4, 1))),
+                new PrimitiveDeterminant.Permutation<Double>(1.0,  new LinkedList<>(List.of(0, 3, 4, 1, 2))),
+                new PrimitiveDeterminant.Permutation<Double>(-1.0, new LinkedList<>(List.of(0, 3, 4, 2, 1))),
+                new PrimitiveDeterminant.Permutation<Double>(-1.0, new LinkedList<>(List.of(0, 4, 1, 2, 3))),
+                new PrimitiveDeterminant.Permutation<Double>(1.0,  new LinkedList<>(List.of(0, 4, 1, 3, 2))),
+                new PrimitiveDeterminant.Permutation<Double>(1.0,  new LinkedList<>(List.of(0, 4, 2, 1, 3))),
+                new PrimitiveDeterminant.Permutation<Double>(-1.0, new LinkedList<>(List.of(0, 4, 2, 3, 1))),
+                new PrimitiveDeterminant.Permutation<Double>(-1.0, new LinkedList<>(List.of(0, 4, 3, 1, 2))),
+                new PrimitiveDeterminant.Permutation<Double>(1.0,  new LinkedList<>(List.of(0, 4, 3, 2, 1))),
+                new PrimitiveDeterminant.Permutation<Double>(-1.0, new LinkedList<>(List.of(1, 0, 2, 3, 4)))
                 // ...
         );
 
@@ -49,7 +49,7 @@ class PrimitiveDeterminantTest {
 
     @Test
     void calcDeterminant() {
-        var matrix = new Matrix(new double[][] {
+        var matrix = Matrix.of(new double[][] {
                 {1, 1, 1, 1, 1},
                 {1, 2, 2, 2, 2},
                 {1, 2, 3, 3, 3},
@@ -63,7 +63,7 @@ class PrimitiveDeterminantTest {
 
     @Test
     void calcDeterminant2() {
-        var matrix = new Matrix(new double[][] {
+        var matrix = Matrix.of(new double[][] {
                 {3, 1},
                 {2, 5},
         });
@@ -74,7 +74,7 @@ class PrimitiveDeterminantTest {
 
     @Test
     void calcDeterminant3() {
-        var matrix = new Matrix(new double[][] {
+        var matrix = Matrix.of(new double[][] {
                 {1, 0, 3},
                 {2, 1, 5},
                 {7, 6, 4},
@@ -86,7 +86,7 @@ class PrimitiveDeterminantTest {
 
     @Test
     void calcDeterminant4() {
-        var matrix = new Matrix(new double[][] {
+        var matrix = Matrix.of(new double[][] {
                 {2, 3, 0, 1},
                 {0, 7, 1 ,0},
                 {0, 0, 3, 1},
@@ -99,7 +99,7 @@ class PrimitiveDeterminantTest {
 
     @Test
     void calcDeterminant_large() {
-        var matrix = new Matrix(new double[][] {
+        var matrix = Matrix.of(new double[][] {
                 {1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
                 {1, 2, 2, 2, 2, 2, 2, 2, 2, 2},
                 {1, 2, 3, 3, 3, 3, 3, 3, 3, 3},
@@ -118,7 +118,7 @@ class PrimitiveDeterminantTest {
 
     @Test
     void calcDeterminant_extra() {
-        var matrix = new Matrix(new double[][] {
+        var matrix = Matrix.of(new double[][] {
                 {0, 1},
                 {-1, 0}
         });
