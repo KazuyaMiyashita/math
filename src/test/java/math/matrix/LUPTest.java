@@ -18,7 +18,7 @@ class LUPTest {
                 {1, 2, 3, 4, 4},
                 {1, 2, 3, 4, 5},
         });
-        var lup = LUP.lupDecomposition(matrix);
+        var lup = LUP.lupDecomposition2(matrix);
 
         var expected = Optional.of(new LUP(
                 Matrix.of(new double[][]{
@@ -58,7 +58,7 @@ class LUPTest {
                 {3, 1},
                 {2, 5},
         });
-        var lup = LUP.lupDecomposition(matrix);
+        var lup = LUP.lupDecomposition2(matrix);
         var expected = Optional.of(new LUP(
                 Matrix.of(new double[][]{
                         {1.0, 0.0},
@@ -89,7 +89,7 @@ class LUPTest {
                 {2, 1, 5},
                 {7, 6, 4},
         });
-        var lup = LUP.lupDecomposition(matrix);
+        var lup = LUP.lupDecomposition2(matrix);
         var expected = Optional.of(new LUP(
                 Matrix.of(new double[][]{
                         {1.0, 0.0, 0.0},
@@ -124,7 +124,7 @@ class LUPTest {
                 {0, 0, 3, 1},
                 {0, 1, 5, 2},
         });
-        var lup = LUP.lupDecomposition(matrix);
+        var lup = LUP.lupDecomposition2(matrix);
         var expected = Optional.of(new LUP<>(
                 Matrix.of(new double[][]{
                         {1.0, 0.0, 0.0, 0.0},
@@ -164,7 +164,7 @@ class LUPTest {
                 {new Rational(0, 1), new Rational(0, 1), new Rational(3, 1), new Rational(1, 1)},
                 {new Rational(0, 1), new Rational(1, 1), new Rational(5, 1), new Rational(2, 1)},
         }, Rational.field, Rational.distance, Rational.comparator);
-        var lup = LUP.lupDecomposition(matrix);
+        var lup = LUP.lupDecomposition2(matrix);
         var expected = Optional.of(new LUP<Rational>(
                 new Matrix<>(new Rational[][]{
                         {new Rational(1, 1), new Rational(0, 1), new Rational(0, 1), new Rational(0, 1)},

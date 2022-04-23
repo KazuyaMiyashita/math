@@ -73,7 +73,7 @@ final class Matrix<T> implements Cloneable {
         if (n != that.m) {
             throw new IllegalArgumentException("thisの列の個数とthatの行の個数が一致しません。this: %d*%d, that: %d*%d".formatted(m, n, that.m, that.n));
         }
-        var newElems = (T[][]) new Object[m][n];
+        var newElems = (T[][]) new Object[m][that.n];
         for (var i = 0; i < m; i++) {
             for (var j = 0; j < that.n; j++) {
                 var acc = field.addZero();
