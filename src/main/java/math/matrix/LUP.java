@@ -4,7 +4,7 @@ import java.util.Optional;
 
 /**
  * @param l 下三角行列。対角成分は全て1とする
- * @param u 上三角行列。
+ * @param u 上三角行列。対角成分は全て0ではない(正則)
  * @param p 行の入れ替えを表す行列
  * @param pSign pの行列式
  * */

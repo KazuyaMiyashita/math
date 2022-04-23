@@ -14,9 +14,9 @@ final class Matrix<T> implements Cloneable {
     final int m; // 行数
     final int n; // 列数
     final T[][] elems;
-    Field<T> field;
-    Distance<T> distance;
-    Comparator<T> comparator;
+    final Field<T> field;
+    final Distance<T> distance;
+    final Comparator<T> comparator;
 
     /** 行ベクトル(配列)の配列から行列を作成する */
     Matrix(T[][] elems, Field<T> field, Distance<T> distance, Comparator<T> comparator) {
